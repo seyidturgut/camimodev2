@@ -1,0 +1,1 @@
+export const announcement = "28 Aralık Cuma namazından sonra Mevlid-i Şerif okunacaktır. Tüm Cemaatimiz davetlidir";
