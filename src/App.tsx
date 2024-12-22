@@ -59,17 +59,17 @@ export default function App() {
 
   return (
     <div className="fixed inset-0 w-screen h-screen aspect-video overflow-hidden flex flex-col">
-      {/* Gradient arka plan (her zaman göster) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black -z-10" />
+      {/* En altta gradient arka plan */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black -z-20" />
 
-      {/* Video (yüklendiyse göster) */}
+      {/* Ortada video */}
       {currentVideo && (
         <video
           autoPlay
           loop
           muted
           playsInline
-          className={`absolute inset-0 w-full h-full object-cover -z-5 transition-opacity duration-500 ${
+          className={`absolute inset-0 w-full h-full object-cover -z-10 transition-opacity duration-500 ${
             isVideoLoading ? 'opacity-0' : 'opacity-100'
           }`}
           key={currentVideo}
@@ -79,17 +79,20 @@ export default function App() {
         </video>
       )}
 
-      <Header />
-      <main className="flex-1 container mx-auto py-8 space-y-12 flex flex-col justify-center">
-        <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 shadow-2xl">
-          <CountdownTimer />
-        </div>
+      {/* En üstte içerik */}
+      <div className="relative z-10 flex flex-col h-full">
+        <Header />
+        <main className="flex-1 container mx-auto py-8 space-y-12 flex flex-col justify-center">
+          <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 shadow-2xl">
+            <CountdownTimer />
+          </div>
 
-        <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 shadow-2xl">
-          <PrayerTimes />
-        </div>
-      </main>
-      <NewsBar />
+          <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 shadow-2xl">
+            <PrayerTimes />
+          </div>
+        </main>
+        <NewsBar />
+      </div>
     </div>
   );
 }
