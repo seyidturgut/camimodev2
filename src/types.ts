@@ -2,7 +2,7 @@ export interface PrayerTime {
   name: string;
   time: string;
   jamaahTime: string; // Cemaat vakti
-  isNext: boolean;
+  isCurrent: boolean;
 }
 
 export interface Announcement {

@@ -14,10 +14,15 @@ export default {
         scroll: {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(-100%)' }
+        },
+        softPulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.85' }
         }
       },
       animation: {
-        'scrolling-text': 'scroll 30s linear infinite'
+        'scrolling-text': 'scroll 30s linear infinite',
+        'soft-pulse': 'softPulse 2s ease-in-out infinite'
       },
       transitionDuration: {
         '3000': '3000ms',
