@@ -1,3 +1,211 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-bg {
+  background: linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.95),
+    rgba(30, 30, 30, 0.98),
+    rgba(20, 20, 20, 0.95),
+    rgba(0, 0, 0, 0.98)
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.stars-1, .stars-2, .stars-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.stars-1 {
+  background-image: radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 40px 80px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 60px 20px, #fff, rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.stars-2 {
+  background-image: radial-gradient(2px 2px at 100px 150px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 200px 50px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 300px 250px, #fff, rgba(0,0,0,0));
+  background-size: 300px 300px;
+  animation: twinkle 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.stars-3 {
+  background-image: radial-gradient(2px 2px at 150px 50px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 250px 250px, #fff, rgba(0,0,0,0)),
+                    radial-gradient(2px 2px at 350px 150px, #fff, rgba(0,0,0,0));
+  background-size: 400px 400px;
+  animation: twinkle 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes subtle-wave {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.bg-mosque {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.97) 0%,
+    rgba(20, 20, 20, 0.95) 25%,
+    rgba(30, 30, 30, 0.97) 50%,
+    rgba(20, 20, 20, 0.95) 75%,
+    rgba(0, 0, 0, 0.97) 100%
+  );
+  background-size: 400% 400%;
+  animation: subtle-wave 15s ease infinite alternate;
+}
+
+@keyframes lampGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+.lamp-light {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 147, 41, 0.2) 0%,
+    rgba(255, 147, 41, 0.1) 40%,
+    transparent 70%
+  );
+  filter: blur(8px);
+  animation: lampGlow 4s ease-in-out infinite;
+}
+
+.lamp-light-1 { top: 10%; left: 5%; }
+.lamp-light-2 { top: 15%; right: 5%; }
+.lamp-light-3 { bottom: 20%; left: 8%; }
+.lamp-light-4 { bottom: 25%; right: 8%; }
+
+.bg-mosque-dark {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.97) 0%,
+    rgba(20, 20, 20, 0.95) 50%,
+    rgba(0, 0, 0, 0.97) 100%
+  );
+}
+
+@keyframes softFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.mosque-bg {
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 13, 0.99) 0%,
+    rgba(23, 23, 23, 0.97) 50%,
+    rgba(13, 13, 13, 0.99) 100%
+  );
+}
+
+.light-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 166, 0, 0.15) 0%,
+    rgba(255, 140, 0, 0.1) 30%,
+    rgba(255, 140, 0, 0.05) 60%,
+    transparent 80%
+  );
+  filter: blur(15px);
+  mix-blend-mode: screen;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  top: -5%;
+  left: 10%;
+  animation: softFloat 8s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 250px;
+  height: 250px;
+  top: 20%;
+  right: 15%;
+  animation: softFloat 7s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.orb-3 {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  left: 20%;
+  animation: softFloat 6s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+.orb-4 {
+  width: 350px;
+  height: 350px;
+  bottom: 5%;
+  right: 10%;
+  animation: softFloat 9s ease-in-out infinite;
+  animation-delay: -6s;
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
