@@ -6,6 +6,12 @@ interface PrayerCardProps {
 }
 
 export function PrayerCard({ prayer }: PrayerCardProps) {
+  // Cemaat vakti hesaplama (20 dk sonrası)
+  const [hours, minutes] = prayer.time.split(':').map(Number);
+  const date = new Date();
+  date.setHours(hours, minutes + 20);
+  const jamaahTime = `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
+
   return (
     <div
       className={`
@@ -19,8 +25,13 @@ export function PrayerCard({ prayer }: PrayerCardProps) {
     >
       <div className="text-center relative z-10">
         <h3 className="text-5xl font-bold text-white/90 mb-4">{prayer.name}</h3>
-        <div className={`text-6xl font-mono font-bold tracking-tight ${prayer.isNext ? 'text-orange-400' : 'text-white/80'}`}>
-          {prayer.time}
+        <div className="space-y-2">
+          <div className={`text-6xl font-mono font-bold tracking-tight ${prayer.isNext ? 'text-orange-400' : 'text-white/80'}`}>
+            {prayer.time}
+          </div>
+          <div className="text-3xl font-medium text-orange-400/80">
+            Cemaat: {jamaahTime}
+          </div>
         </div>
       </div>
       {prayer.isNext && (
