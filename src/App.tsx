@@ -10,9 +10,9 @@ export default function App() {
   const bgClass = getBackgroundClass(period);
 
   return (
-    <div className="fixed inset-0 aspect-video bg-gradient-to-b from-black to-gray-900 flex flex-col overflow-hidden">
+    <div className="fixed inset-0 w-screen h-screen aspect-video overflow-hidden bg-gradient-to-b from-black to-gray-900 flex flex-col">
       <Header />
-      <main className="flex-1 container mx-auto py-6 space-y-8 flex flex-col justify-center">
+      <main className="flex-1 container mx-auto py-8 space-y-12 flex flex-col justify-center">
         <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 shadow-2xl">
           <CountdownTimer />
         </div>
