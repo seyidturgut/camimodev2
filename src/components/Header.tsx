@@ -19,11 +19,11 @@ export function Header() {
           
           {/* Cami Bilgileri */}
           <div className="space-y-0.5">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-display font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
               Yeni Cuma
             </h1>
             <div className="space-y-0.5">
-              <div className="text-xl text-orange-400/90 font-medium">
+              <div className="text-xl font-medium text-orange-400/90">
                 İmam: Ahmet Yılmaz
               </div>
               <div className="text-xl text-orange-400/80">
@@ -35,10 +35,10 @@ export function Header() {
 
         <div className="flex items-center gap-8">
           <div className="text-right">
-            <div className="text-2xl font-bold text-white/90">22 Aralık 2024</div>
+            <div className="text-2xl font-display font-bold text-white/90">22 Aralık 2024</div>
             <div className="text-lg text-orange-400/80">21 Cemazi-el Ahir 1446</div>
           </div>
-          <div className="text-4xl font-mono font-bold bg-black/20 px-4 py-2 rounded-xl">
+          <div className="text-4xl font-display font-bold bg-black/20 px-4 py-2 rounded-xl">
             13:33
           </div>
           <WeatherDisplay />
