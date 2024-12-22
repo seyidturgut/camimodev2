@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Arabic';
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+}
+
+.font-arabic {
+  font-family: 'Arabic', sans-serif;
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -12,18 +21,6 @@
   100% {
     background-position: 0% 50%;
   }
-}
-
-.animated-bg {
-  background: linear-gradient(
-    -45deg,
-    rgba(0, 0, 0, 0.95),
-    rgba(30, 30, 30, 0.98),
-    rgba(20, 20, 20, 0.95),
-    rgba(0, 0, 0, 0.98)
-  );
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
 }
 
 @keyframes twinkle {
@@ -208,4 +205,47 @@
   );
   opacity: 0.5;
   pointer-events: none;
+}
+
+@keyframes pulseText {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes backgroundPulse {
+  0%, 100% {
+    background-color: rgba(0, 0, 0, 0.95);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.animate-pulse-text {
+  animation: pulseText 2s ease-in-out infinite;
+}
+
+.animate-bg-pulse {
+  animation: backgroundPulse 3s ease-in-out infinite;
+}
+
+.prayer-time-bg {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15vw;
+  font-weight: bold;
+  color: rgba(251, 146, 60, 0.05);
+  white-space: nowrap;
+  text-transform: uppercase;
+  user-select: none;
+  z-index: -1;
 }

@@ -3,10 +3,36 @@ import { Header } from './components/Header';
 import { CountdownTimer } from './components/CountdownTimer';
 import { PrayerTimes } from './components/PrayerTimes';
 import { NewsBar } from './components/NewsBar';
+import { AdhanAlert } from './components/AdhanAlert';
+import { format } from 'date-fns';
+import { prayerTimes } from './data/prayerTimes';
 
 export default function App() {
   const [currentVideo, setCurrentVideo] = useState<string | null>(null);
   const [isVideoLoading, setIsVideoLoading] = useState(false);
+  const [showAdhanAlert, setShowAdhanAlert] = useState(false);
+  const [currentPrayerName, setCurrentPrayerName] = useState<string>('');
+
+  // Ezan vakti kontrolü
+  useEffect(() => {
+    const checkPrayerTime = () => {
+      const now = new Date();
+      const currentTime = format(now, 'HH:mm');
+      
+      const currentPrayer = prayerTimes.find(prayer => prayer.time === currentTime);
+      
+      if (currentPrayer) {
+        setCurrentPrayerName(currentPrayer.name);
+        setShowAdhanAlert(true);
+      }
+    };
+
+    // Her dakika kontrol et
+    const timer = setInterval(checkPrayerTime, 60000);
+    checkPrayerTime(); // İlk kontrol
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -46,6 +72,17 @@ export default function App() {
           setIsVideoLoading(true);
           setCurrentVideo('https://ezanvaktipro.com/media/loop8.mp4');
           break;
+        case 'a':
+        case 'A':
+          // Test için ezan vakti uyarısını göster
+          setCurrentPrayerName('Akşam');
+          setShowAdhanAlert(true);
+          break;
+        case 'k':
+        case 'K':
+          // Ezan vakti uyarısını kapat
+          setShowAdhanAlert(false);
+          break;
       }
     };
 
@@ -79,15 +116,27 @@ export default function App() {
         </video>
       )}
 
+      {/* Ezan Vakti Uyarısı */}
+      {showAdhanAlert && (
+        <AdhanAlert 
+          onClose={() => setShowAdhanAlert(false)}
+          prayerName={currentPrayerName}
+        />
+      )}
+
       {/* En üstte içerik */}
       <div className="relative z-10 flex flex-col h-full">
         <Header />
-        <main className="flex-1 container mx-auto py-8 space-y-12 flex flex-col justify-center">
-          <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 shadow-2xl">
-            <CountdownTimer />
+        <main className="flex-1 container mx-auto py-8 px-4">
+          {/* Üst kısım - Geri sayım */}
+          <div className="mb-8">
+            <div className="bg-black/30 backdrop-blur-md rounded-3xl">
+              <CountdownTimer />
+            </div>
           </div>
 
-          <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 shadow-2xl">
+          {/* Ana alan - Namaz vakitleri */}
+          <div>
             <PrayerTimes />
           </div>
         </main>
