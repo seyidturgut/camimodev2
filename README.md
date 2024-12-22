@@ -2,6 +2,8 @@
 
 Modern ve kullanıcı dostu cami vakit gösterim sistemi. Camilerimiz için özel olarak tasarlanmış, profesyonel görünümlü ve kolay kullanımlı bir yazılım çözümü.
 
+🌐 **Demo:** [https://camimode.netlify.app/](https://camimode.netlify.app/)
+
 ⚠️ **ÖNEMLİ YASAL UYARI**
 Bu yazılım ticari kullanıma kapalıdır. Tüm hakları saklıdır. İzinsiz kullanımı, kopyalanması ve dağıtılması yasaktır.
 Copyright © 2024
@@ -82,4 +84,7 @@ Bu yazılım ve içerdiği tüm bileşenler (kodlar, tasarımlar, videolar, gör
 
 ## İletişim
 
-Destek ve iletişim için: [iletişim bilgileri]
+Destek ve iletişim için:
+
+👤 **Seyid Turgut**  
+📧 [seyitturgut@gmail.com](mailto:seyitturgut@gmail.com)
