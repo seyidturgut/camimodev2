@@ -26,7 +26,7 @@ export function Header() {
               <div className="text-xl text-orange-400/90 font-medium">
                 İmam: Ahmet Yılmaz
               </div>
-              <div className="text-lg text-orange-400/80">
+              <div className="text-xl text-orange-400/80">
                 Tel: 0533 456 7676
               </div>
             </div>
