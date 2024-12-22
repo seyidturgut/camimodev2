@@ -14,28 +14,28 @@ export default function App() {
           setCurrentVideo(null);
           break;
         case '1':
-          setCurrentVideo('loop1.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop1.mp4');
           break;
         case '2':
-          setCurrentVideo('loop2.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop2.mp4');
           break;
         case '3':
-          setCurrentVideo('loop3.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop3.mp4');
           break;
         case '4':
-          setCurrentVideo('loop4.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop4.mp4');
           break;
         case '5':
-          setCurrentVideo('loop5.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop5.mp4');
           break;
         case '6':
-          setCurrentVideo('loop6.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop6.mp4');
           break;
         case '7':
-          setCurrentVideo('loop7.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop7.mp4');
           break;
         case '8':
-          setCurrentVideo('loop8.mp4');
+          setCurrentVideo('https://ezanvaktipro.com/media/loop8.mp4');
           break;
       }
     };
@@ -56,7 +56,7 @@ export default function App() {
           className="absolute inset-0 w-full h-full object-cover -z-10"
           key={currentVideo}
         >
-          <source src={`media/${currentVideo}`} type="video/mp4" />
+          <source src={currentVideo} type="video/mp4" />
         </video>
       ) : (
         // Video yoksa gradient arka plan
