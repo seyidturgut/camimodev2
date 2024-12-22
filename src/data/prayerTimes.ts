@@ -1,11 +1,11 @@
 import type { PrayerTime } from '../types';
 
-const rawPrayerTimes = [
-  { name: 'Sabah', time: '05:23' },
-  { name: 'Öğle', time: '13:15' },
-  { name: 'İkindi', time: '16:42' },
-  { name: 'Akşam', time: '19:32' },
-  { name: 'Yatsı', time: '20:52' }
+export const rawPrayerTimes = [
+  { name: 'Sabah', time: '06:38' },
+  { name: 'Öğle', time: '13:05' },
+  { name: 'İkindi', time: '15:26' },
+  { name: 'Akşam', time: '17:47' },
+  { name: 'Yatsı', time: '19:12' }
 ];
 
 // Saat formatını karşılaştırmak için dakikaya çevirme
@@ -33,7 +33,6 @@ function calculateJamaahTime(time: string): string {
 export const prayerTimes: PrayerTime[] = rawPrayerTimes.map((prayer, index) => {
   const currentMinutes = getCurrentMinutes();
   const prayerMinutes = timeToMinutes(prayer.time);
-  const jamaahTime = calculateJamaahTime(prayer.time);
   
   // Mevcut vakti belirleme
   const isCurrent = currentMinutes >= prayerMinutes && 
@@ -43,7 +42,7 @@ export const prayerTimes: PrayerTime[] = rawPrayerTimes.map((prayer, index) => {
 
   return {
     ...prayer,
-    jamaahTime,
+    jamaahTime: calculateJamaahTime(prayer.time),
     isCurrent
   };
 });

@@ -48,33 +48,19 @@ export function CountdownTimer() {
   }, []);
 
   return (
-    <div className="text-center py-8">
-      <div className="space-y-8">
-        <h2 className="text-6xl text-white/80 font-medium">
-          <span className="text-orange-400">{currentPrayer}</span> Vaktine
-        </h2>
-        <div className="flex items-end justify-center gap-4">
-          <div className="text-center">
-            <div className="text-[12rem] font-mono font-bold text-white tracking-wider leading-none">
-              {timeLeft.hours}
-            </div>
-            <div className="text-2xl text-white/60 font-medium mt-2">Saat</div>
-          </div>
-          <div className="text-[8rem] font-bold text-white/40 mb-8">:</div>
-          <div className="text-center">
-            <div className="text-[12rem] font-mono font-bold text-white tracking-wider leading-none">
-              {timeLeft.minutes}
-            </div>
-            <div className="text-2xl text-white/60 font-medium mt-2">Dakika</div>
-          </div>
-          <div className="text-[8rem] font-bold text-white/40 mb-8">:</div>
-          <div className="text-center">
-            <div className="text-[12rem] font-mono font-bold text-white tracking-wider leading-none">
-              {timeLeft.seconds}
-            </div>
-            <div className="text-2xl text-white/60 font-medium mt-2">Saniye</div>
-          </div>
-        </div>
+    <div className="flex items-center gap-2 lg:gap-4">
+      {/* Başlık */}
+      <div className="text-xl lg:text-3xl font-bold text-orange-400">
+        Kalan Süre:
+      </div>
+
+      {/* Geri Sayım */}
+      <div className="text-2xl lg:text-4xl font-bold text-orange-400 tracking-wider flex items-center gap-1 font-mono tabular-nums">
+        <span>{timeLeft.hours}</span>
+        <span>:</span>
+        <span>{timeLeft.minutes}</span>
+        <span>:</span>
+        <span>{timeLeft.seconds}</span>
       </div>
     </div>
   );

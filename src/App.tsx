@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
-import { CountdownTimer } from './components/CountdownTimer';
 import { PrayerTimes } from './components/PrayerTimes';
 import { NewsBar } from './components/NewsBar';
 import { AdhanAlert } from './components/AdhanAlert';
+import { VersesDisplay } from './components/VersesDisplay';
 import { format } from 'date-fns';
 import { prayerTimes } from './data/prayerTimes';
 
@@ -127,17 +127,11 @@ export default function App() {
       {/* En üstte içerik */}
       <div className="relative z-10 flex flex-col h-full">
         <Header />
-        <main className="flex-1 container mx-auto py-8 px-4">
-          {/* Üst kısım - Geri sayım */}
-          <div className="mb-8">
-            <div className="bg-black/30 backdrop-blur-md rounded-3xl">
-              <CountdownTimer />
-            </div>
-          </div>
-
+        <main className="flex-1 container mx-auto p-8">
           {/* Ana alan - Namaz vakitleri */}
           <div>
             <PrayerTimes />
+            <VersesDisplay />
           </div>
         </main>
         <NewsBar />
