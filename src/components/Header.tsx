@@ -34,12 +34,12 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-8">
+          <div className="text-4xl font-display font-bold bg-black/20 px-4 py-2 rounded-xl">
+            13:33
+          </div>
           <div className="text-right">
             <div className="text-2xl font-display font-bold text-white/90">22 Aralık 2024</div>
             <div className="text-lg text-orange-400/80">21 Cemazi-el Ahir 1446</div>
-          </div>
-          <div className="text-4xl font-display font-bold bg-black/20 px-4 py-2 rounded-xl">
-            13:33
           </div>
           <WeatherDisplay />
         </div>
