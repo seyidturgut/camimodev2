@@ -95,9 +95,9 @@ export default function App() {
   };
 
   return (
-    <div className="fixed inset-0 w-screen h-screen aspect-video overflow-hidden flex flex-col">
+    <div className="fixed inset-0 w-screen h-screen aspect-video overflow-hidden flex flex-col dark bg-black">
       {/* En altta gradient arka plan */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black -z-20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-neutral-900 to-black -z-20" />
 
       {/* Ortada video */}
       {currentVideo && (
